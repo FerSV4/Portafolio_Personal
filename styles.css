@@ -1,0 +1,54 @@
+/* Estilos para body*/
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Estilos para el header */
+.header {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 15px 5%; 
+    background-color: #48946b; 
+    border-bottom: 5px solid #dee2e6; 
+}
+
+/* Estilo logo */
+.logo {
+    font-size: 1.5em; 
+    font-weight: bold; 
+    color: #ffffff;
+    text-decoration: none; 
+}
+
+/* Estilos barra de navegación */
+.navbar a {
+    margin-left: 20px; 
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+/* Estilo de enlaces*/
+.navbar a:hover {
+    color: #000000;
+    text-decoration: underline dotted black;
+}
+
+/* iconos redes sociales */
+.social-icons {
+    text-decoration: none;
+}
+
+.social-icons a {
+    color: #ffffff; 
+    font-size: 1.6em; 
+    margin: 0 10px; 
+    text-decoration: none; 
+    transition: color 0.3s ease; 
+}
+
+.social-icons a:hover {
+    color: #000000;
+}
