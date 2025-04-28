@@ -28,6 +28,7 @@
         </div>
 
         <nav class="navbar">
+            <!-- Cambia href="#inicio" por href="#inicio" -->
             <a href="#inicio">Inicio</a>
             <a href="#proyectos">Proyectos</a>
             <a href="#SobreMi">Sobre mi</a>
@@ -38,17 +39,17 @@
 
     <!-- SECCION DE INICIO -->
 
-    <section class="home" id="home">
-      <div class="home-img">
+    <section class="inicio" id="inicio">
+      <div class="inicio-img">
         <img src="assets/profile.png" alt="Imagen de perfil">
       </div> 
-      <div class="home-content">
+      <div class="inicio-content">
         <h3> Bienvenido, soy </h3>
         <h1>Fernando Sejas</h1>
         <h3><span class="multiple-text"> Frontend Dev </span></h3>
         <p>"Apasionado por el diseño y la tecnologia"</p>
         
-        <div class="home-social-icons">
+        <div class="inicio-social-icons">
           <a href="https://www.linkedin.com/in/fernando-sejas-344495285" target="_blank" aria-label="LinkedIn Profile">
               <i class="fab fa-linkedin"></i>
           </a>
@@ -56,6 +57,37 @@
               <i class="fab fa-github"></i>
           </a>
       </div>
+    </section>
+
+    <!-- SECCION DE PROYECTOS -->
+    <section class="proyectos" id="proyectos">
+        <h2 class="heading">Mis <span>Proyectos</span></h2>
+
+        <div class="proyectos-container">
+            <div class="proyecto-card">
+                <img src="assets/proyecto1.png" alt="Proyecto 1">
+                <div class="proyecto-info">
+                    <h4>Sistema Solar</h4>
+                    <p>Proyecto de sistema solar. <br> Realizado con JavaScript, Three.Js y modelos 3D</p>
+                </div>
+            </div>
+
+            <div class="proyecto-card">
+                <img src="assets/proyecto2.png" alt="Proyecto 2"> 
+                <div class="proyecto-info">
+                    <h4>Sistema de seguridad - IA</h4>
+                    <p>Sistema de reconocimiento en tiempo real. <br> Realizado con Python, Tensorflow y OpenCV</p>
+                </div>
+            </div>
+
+            <div class="proyecto-card">
+                <img src="assets/proyecto3.png" alt="Proyecto 3">
+                <div class="proyecto-info">
+                    <h4>E-ccomerce "Absorb"</h4>
+                    <p>Tienda Online de instrumentos musicales <br> Realizado en React, Typescript, Css Components.</p>      
+                </div>
+            </div>
+        </div>
     </section>
   </body>
 </html>
