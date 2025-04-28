@@ -72,6 +72,13 @@ body {
     text-decoration: underline dotted black;
 }
 
+
+#menu-icon {
+    display: none;
+    font-size: 2.5rem;
+    color: #fff;
+    cursor: pointer;
+}
 /* iconos redes sociales */
 .social-icons {
     text-decoration: none;
@@ -94,7 +101,6 @@ body {
     padding : 15px;
     text-decoration: none;
     display: flex;
-
 }
 .inicio-social-icons a {
     color: #000000;
@@ -530,12 +536,12 @@ span {
 
 @media (max-width: 992px) {
     .header {
-        padding: 15px 3%; 
+        padding: 15px 3%;
     }
     .navbar {
         position: absolute;
         top: 100%;
-        left: -100%; 
+        left: -100%;
         width: 100%;
         padding: 1rem 3%;
         background: var(--main-color);
@@ -543,18 +549,18 @@ span {
         flex-direction: column;
         align-items: flex-start;
     }
-    .navbar.active { 
+    .navbar.active {
         left: 0;
     }
     .navbar a {
-        display: block; 
+        display: block;
         font-size: 1.5rem;
         margin: 1rem 0;
     }
     
     #menu-icon {
-        display: block; 
-        font-size: 2rem;
+        display: block;
+        font-size: 2.5rem;
         color: #fff;
         cursor: pointer;
     }
@@ -563,7 +569,7 @@ span {
     }
 
     .inicio {
-        flex-direction: column-reverse; 
+        flex-direction: column-reverse;
         text-align: center;
     }
     .inicio-content {
@@ -585,14 +591,14 @@ span {
     }
 
     .proyectos-container {
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     }
 
     .articulos-container {
         gap: 2rem;
     }
     .articulo-card {
-        width: clamp(250px, 80%, 400px); 
+        width: clamp(250px, 80%, 400px);
     }
 
     .habilidades ul li {
@@ -602,7 +608,7 @@ span {
     }
 
     .contacto form .input-box input {
-        width: 100%; 
+        width: 100%;
         margin: 0.7rem 0;
     }
 }
@@ -628,7 +634,7 @@ span {
         grid-template-columns: 1fr;
     }
     .articulo-card {
-        width: 90%; 
+        width: 90%;
     }
     .footer {
         padding: 1.5rem 5%;
