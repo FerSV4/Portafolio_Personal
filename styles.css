@@ -181,7 +181,7 @@ span {
 }
 
 .proyecto-card {
-    background: var(--bg-color); /* Fondo blanco para las tarjetas */
+    background: var(--bg-color); 
     border-radius: 0.8rem;
     box-shadow: 0 0.1rem 0.5rem rgba(0, 0, 0, 0.1); 
     overflow: hidden; 
@@ -239,4 +239,229 @@ span {
 
 .proyecto-info a i {
     margin-left: 0.3rem;
+}
+
+/* Estilos SECCION FOOTER */
+.footer {
+    background-color: var(--main-color); 
+    color: #ffffff; 
+    padding: 2rem 5%; 
+    text-align: center; 
+    margin-top: auto;
+}
+
+.footer-social-icons {
+    margin-bottom: 1rem; 
+}
+
+.footer-social-icons a {
+    color: #ffffff; 
+    font-size: 1.8em; 
+    margin: 0 10px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-social-icons a:hover {
+    color: var(--snd-bg-color); 
+}
+
+.footer-text {
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Estilos SECCION ARTICULOS */
+.articulos {
+    background: var(--snd-bg-color);
+    padding-bottom: 7rem; 
+}
+
+.articulos-container {
+    display: flex; 
+    justify-content: center;
+    align-items: stretch; 
+    flex-wrap: wrap; 
+    gap: 3rem; 
+}
+
+.articulo-card {
+    background: var(--bg-color); 
+    border-radius: 1rem;
+    box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    width: clamp(300px, 45%, 500px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.articulo-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 0.4rem 1.2rem rgba(0, 0, 0, 0.2);
+}
+
+.articulo-card img {
+    width: 100%;
+    height: 200px; 
+    object-fit: cover;
+}
+
+.articulo-info {
+    padding: 1.5rem;
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.articulo-info h4 {
+    font-size: 1.6rem;
+    color: var(--main-color);
+    margin-bottom: 1rem;
+}
+
+.articulo-info p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    flex-grow: 1; 
+}
+
+.btn-articulo {
+    display: block; 
+    width: fit-content;
+    margin: 0 auto 1.5rem auto; 
+    padding: 0.8rem 2rem;
+    background-color: var(--main-color);
+    color: #ffffff;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.btn-articulo:hover {
+    background-color: #365853; 
+}
+
+/* Estilos SECCION SOBRE MI */
+.sobremi {
+    background: var(bg-color); 
+    padding: 5rem 13% 5rem; 
+}
+
+.sobremi-container {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+    gap: 2rem; 
+    flex-wrap: wrap; 
+}
+
+.sobremi-content {
+    flex: 1 1 55%; 
+    max-width: 55%; 
+}
+
+.sobremi-content h2.heading {
+    text-align: left;
+    padding-top: 0; 
+    margin-bottom: 1.5rem;
+}
+
+.sobremi-content h3 {
+    font-size: 1.8rem;
+    color: var(--main-color);
+    margin-bottom: 0.5rem;
+}
+
+.sobremi-content h4 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.sobremi-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: justify; 
+    margin-bottom: 1.5rem;
+}
+
+.habilidades {
+    margin-top: 2rem;
+}
+
+.habilidades h5 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: var(--main-color);
+}
+
+.habilidades ul {
+    list-style: none;
+    padding: 0;
+}
+
+.habilidades ul li {
+    background: var(--snd-bg-color); 
+    color: var(--text-color);
+    padding: 0.5rem 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 0.3rem;
+    display: inline-block; 
+    margin-right: 0.5rem; 
+    font-size: 0.9rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.sobremi-img {
+    flex: 1 1 40%; 
+    max-width: 40%;
+    text-align: center; 
+}
+
+.sobremi-img img {
+    max-width: 100%; 
+    height: auto;
+    border-radius: 1rem; 
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.2);
+}
+
+
+@media (max-width: 992px) {
+    .sobremi-container {
+        flex-direction: column-reverse; 
+        gap: 2rem;
+    }
+    .sobremi-content, .sobremi-img {
+        flex: 1 1 100%;
+        max-width: 100%;
+        text-align: center;
+    }
+    .sobremi-content h2.heading {
+        text-align: center; 
+    }
+    .sobremi-content p {
+        text-align: center; 
+    }
+    .habilidades ul li {
+        display: block; 
+        margin-right: 0;
+        margin-bottom: 0.5rem;
+    }
+}
+
+.contacto {
+    background: var(bg-color); 
+}
+
+.contacto heading {
+    align-items: center;
+}
+
+.contacto h2 {
+    margin-bottom: 3rem;
+    color: var(--main-color);
 }
