@@ -9,175 +9,40 @@
     <meta name="description" content="Portafolio personal de Fernando Sejas, mostrando proyectos, artículos y experiencia.">
     <meta name="keywords" content="portafolio, desarrollo web, Fernando Sejas, proyectos, frontend, backend">
     <meta name="author" content="Fernando Sejas">
-    <link rel="stylesheet" href="styles.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/secciones/inicio.css">
+    <link rel="stylesheet" href="css/secciones/proyectos.css">
+    <link rel="stylesheet" href="css/secciones/sobremi.css">
+    <link rel="stylesheet" href="css/secciones/articulos.css">
+    <link rel="stylesheet" href="css/secciones/contacto.css">
+    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/responsive.css">
 
 </head>
 <body>
-    <header class="header">
-        <a href="#inicio" class="logo">Fernando Sejas</a>
 
-        <i class="fas fa-bars" id="menu-icon"></i>
+    <div id="header-placeholder"></div>
 
-        <!--iconos de redes sociales -->
-        <div class="social-icons">
-            <a href="https://www.linkedin.com/in/fernando-sejas-344495285" target="_blank" aria-label="LinkedIn Profile">
-                <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="https://github.com/FerSV4" target="_blank" aria-label="GitHub Profile">
-                <i class="fab fa-github"></i>
-            </a>
-        </div>
 
-        <nav class="navbar">
-            <a href="#inicio">Inicio</a>
-            <a href="#proyectos">Proyectos</a>
-            <a href="#SobreMi">Sobre mi</a>
-            <a href="#articulos">Articulos</a>
-            <a href="#contacto">Contacto</a>
-        </nav> 
-    </header>
+    <div id="inicio-placeholder"></div>
 
-    <!-- SECCION DE INICIO -->
 
-    <section class="inicio" id="inicio">
-      <div class="inicio-img">
-        <img src="assets/profile.png" alt="Imagen de perfil">
-      </div> 
-      <div class="inicio-content">
-        <h3> Bienvenido, soy </h3>
-        <h1>Fernando Sejas</h1>
-        <h3><span class="multiple-text"> Frontend Dev </span></h3>
-        <p>"Apasionado por el diseño y la tecnologia"</p>
-        
-        <div class="inicio-social-icons">
-          <a href="https://www.linkedin.com/in/fernando-sejas-344495285" target="_blank" aria-label="LinkedIn Profile">
-              <i class="fab fa-linkedin"></i>
-          </a>
-          <a href="https://github.com/FerSV4" target="_blank" aria-label="GitHub Profile">
-              <i class="fab fa-github"></i>
-          </a>
-      </div>
-    </section>
+    <div id="proyectos-placeholder"></div>
 
-    <!-- SECCION DE PROYECTOS -->
-    <section class="proyectos" id="proyectos">
-        <h2 class="heading">Mis <span>Proyectos</span></h2>
 
-        <div class="proyectos-container">
-            <div class="proyecto-card">
-                <img src="assets/proyecto1.png" alt="Proyecto 1">
-                <div class="proyecto-info">
-                    <h4>Sistema Solar</h4>
-                    <p>Proyecto de sistema solar. <br> Realizado con JavaScript, Three.Js y modelos 3D</p>
-                    <a href="https://github.com/FerSV4/SolarSystem" target="_blank">GitHub <i class="fas fa-external-link-alt"></i></a>
-                </div>
-            </div>
+    <div id="sobremi-placeholder"></div>
 
-            <div class="proyecto-card">
-                <img src="assets/proyecto2.png" alt="Proyecto 2"> 
-                <div class="proyecto-info">
-                    <h4>Sistema de seguridad - IA</h4>
-                    <p>Sistema de reconocimiento en tiempo real. <br> Realizado con Python, Tensorflow y OpenCV</p>
-                    <a href="https://github.com/FerSV4/Sistema-de-seguridad-Inteligencia-Artificial" target="_blank">GitHub <i class="fas fa-external-link-alt"></i></a> 
-                </div>
-            </div>
+    <div id="articulos-placeholder"></div>
 
-            <div class="proyecto-card">
-                <img src="assets/proyecto3.png" alt="Proyecto 3">
-                <div class="proyecto-info">
-                    <h4>E-ccomerce "Absorb"</h4>
-                    <p>Tienda Online de instrumentos musicales <br> Realizado en React, TypeScript, Css Components.</p>      
-                    <a href="https://github.com/FerSV4/AbsorbProject" target="_blank">GitHub <i class="fas fa-external-link-alt"></i></a>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- SECCION SOBRE MI -->
-    <section class="sobremi" id="SobreMi">
-      <div class="sobremi-container">
-          <div class="sobremi-content">
-              <h2 class="heading">Sobre <span>mi</span></h2>
-              <h3>Desarrollador Frontend</h3> 
-              <h4>Fernando Sejas</h4> 
-              <p>
-                  Soy un estudiante entusiasta del desarrollo web con un fuerte enfoque en crear interfaces de usuario atractivas y funcionales. Me encanta aprender nuevas tecnologías y aplicarlas en proyectos prácticos.
-              </p>
-              <div class="habilidades">
-                  <h5>Habilidades Clave:</h5>
-                  <ul>
-                      <li>HTML5, C++, SQL</li>
-                      <li>Diseño responsive</li>
-                      <li>Git, GitHub</li>
-                      <li>Metodologías Ágiles (Scrum)</li>
-                  </ul>
-              </div>
-          </div>
-          <div class="sobremi-img">
-              <img src="assets/about.png" alt="Img Sobre Mi"> 
-          </div>
-      </div>
-  </section>
-
-    <!-- SECCION DE ARTICULOS -->
-    <section class="articulos" id="articulos">
-        <h2 class="heading"><span>Articulos</span></h2>
-
-        <div class="articulos-container">
-            <div class="articulo-card">
-                <img src="assets/articulo1.png" alt="Articulo 1">
-                <div class="articulo-info">
-                    <h4>Angular 19 - Novedades</h4>
-                    <p> 19 de junio 2024</p>
-                    <p> Angular 19 refina aún más el modelo de componentes autónomos (standalone components), permitiendo desarrollar interfaces sin la necesidad de definir módulos (NgModules)</p>
-                </div>
-                <a href="#" target="_blank" class="btn-articulo">Leer Más</a>
-            </div>
-
-            <div class="articulo-card">
-                <img src="assets/articulo2.png" alt="Articulo 2">
-                <div class="articulo-info">
-                    <h4>Computadoras cuanticas - Un nuevo peligro?</h4>
-                    <p> 10 de marzo 2025</p>
-                    <p>Las computadoras cuanticas representan un nuevo peligro para la seguridad web, porque pueden romper los métodos de cifrado actuales, como RSA y...</p>
-                </div>
-                <a href="#" target="_blank" class="btn-articulo">Leer Más</a>
-            </div>
-        </div>
-    </section>
-    <!-- SECCION DE CONTACTO -->
-    <section id="contacto" class="contacto">
-      <h2 class="heading">Contacto <span></span></h2>
-
-      <form action="#">
-        <div class="input-box">
-            <input type="text" name="nombre" placeholder="Nombre Completo">
-            <input type="email" name="email" placeholder="Correo Electronico">
-        </div>
-        <div class="input-box">
-            <input type="number" name="numero" placeholder="Numero de telefono">
-            <input type="text" name="asunto" placeholder="Asunto">
-        </div>
-
-        <textarea name="mensaje" id="" cols="30" rows="10" placeholder="Tu mensaje"></textarea>
-        <input type="submit" value="Enviar" class="btn">
-    </form>
-  </section>
+    <div id="contacto-placeholder"></div>
     
-    
-    <!-- SECCION DE FOOTER -->
-    <footer class="footer">
-        <div class="footer-social-icons">
-            <a href="https://www.linkedin.com/in/fernando-sejas-344495285" target="_blank" aria-label="LinkedIn Profile">
-                <i class="fab fa-linkedin"></i>
-            </a>
-            <a href="https://github.com/FerSV4" target="_blank" aria-label="GitHub Profile">
-                <i class="fab fa-github"></i>
-            </a>
-        </div>
-        <p class="footer-text">© 2024 Fernando Sejas | Todos los derechos reservados.</p> 
-    </footer>
-    <script src="script.js"></script>
+    <div id="footer-placeholder"></div>
 
-  </body>
+    <script src="js/main.js"></script>
+</body>
 </html>

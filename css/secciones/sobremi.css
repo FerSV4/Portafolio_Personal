@@ -1,0 +1,83 @@
+/* Estilos SECCION SOBRE MI */
+.sobremi {
+    background: var(--bg-color); 
+    padding: 5rem 13% 5rem; 
+}
+
+.sobremi__contenedor {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between;
+    gap: 2rem; 
+    flex-wrap: wrap; 
+}
+
+.sobremi__contenido {
+    flex: 1 1 55%; 
+    max-width: 55%; 
+}
+
+.sobremi__contenido .heading {
+    text-align: left;
+    padding-top: 0; 
+    margin-bottom: 1.5rem;
+}
+
+.sobremi__subtitulo {
+    font-size: 1.8rem;
+    color: var(--main-color);
+    margin-bottom: 0.5rem;
+}
+
+.sobremi__nombre {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.sobremi__descripcion {
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: justify; 
+    margin-bottom: 1.5rem;
+}
+
+.sobremi__habilidades {
+    margin-top: 2rem;
+}
+
+.sobremi__habilidades-titulo {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: var(--main-color);
+}
+
+.sobremi__habilidades-lista {
+    list-style: none;
+    padding: 0;
+}
+
+.sobremi__habilidad-item {
+    background: var(--snd-bg-color); 
+    color: var(--text-color);
+    padding: 0.5rem 1rem;
+    margin-bottom: 0.5rem;
+    border-radius: 0.3rem;
+    display: inline-block; 
+    margin-right: 0.5rem; 
+    font-size: 0.9rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.sobremi__imagen-contenedor {
+    flex: 1 1 40%; 
+    max-width: 40%;
+    text-align: center; 
+}
+
+.sobremi__imagen {
+    max-width: 100%; 
+    height: auto;
+    border-radius: 1rem; 
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.2);
+}
