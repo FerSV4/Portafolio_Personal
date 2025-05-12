@@ -1,0 +1,56 @@
+/* Estilos para el header */
+.header {
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 15px 5%; 
+    background-color: #48946b; 
+    border-bottom: 5px solid #266325; 
+}
+
+.header__logo {
+    font-size: 1.5em; 
+    font-weight: bold; 
+    color: #ffffff;
+    text-decoration: none; 
+}
+
+.header__navbar-link {
+    margin-left: 20px; 
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+.header__navbar-link:hover {
+    color: #000000;
+    text-decoration: underline dotted black;
+}
+
+.header__menu-icono {
+    display: none;
+    font-size: 2.5rem;
+    color: #fff;
+    cursor: pointer;
+}
+
+.header__social-icons {
+    text-decoration: none;
+}
+
+.header__social-icon {
+    color: #ffffff; 
+    font-size: 1.6em; 
+    margin: 0 10px; 
+    text-decoration: none; 
+    transition: color 0.3s ease; 
+}
+
+.header__social-icon:hover {
+    color: #000000;
+}
