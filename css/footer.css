@@ -19,7 +19,7 @@
 }
 
 .footer__social-icon:hover {
-    color: var(--snd-bg-color);
+    color: #000000;
 }
 
 .footer__text {
