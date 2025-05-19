@@ -77,3 +77,54 @@
 .proyecto-card__enlace-icono {
     margin-left: 0.3rem;
 }
+
+.proyecto-card {
+    position: relative;
+}
+
+.proyecto-card__actions {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    display: flex;
+    gap: 0.5rem;
+    z-index: 10;
+}
+
+.proyecto-card__action-button {
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid var(--main-color);
+    color: var(--main-color);
+    padding: 0.4rem 0.6rem;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.proyecto-card__action-button:hover {
+    background-color: var(--main-color);
+    color: var(--bg-color);
+}
+
+.proyecto-card__like-count {
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.proyecto-card__action-button--like.active {
+    background-color: #ff6b6b; 
+    color: white;
+    border-color: #ff6b6b;
+}
+
+.proyecto-card__action-button--like.active i {
+    color: white;
+}
+
+.proyecto-card__action-button--save.active i.far.fa-bookmark {
+    color: var(--main-color); 
+}
