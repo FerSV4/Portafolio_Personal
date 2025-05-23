@@ -11,22 +11,12 @@ function initializeMenu() {
         let navLinks = document.querySelectorAll('.navbar a');
         navLinks.forEach(link => {
             link.onclick = () => {
-                if (navbar.classList.contains('active') && link.getAttribute('href').startsWith('#')) {
+                if (navbar.classList.contains('active')) {
                     menuIcon.classList.remove('fa-times');
                     navbar.classList.remove('active');
                 }
             };
         });
 
-        window.onscroll = () => {
-            let currentMenuIcon = document.querySelector('#menu-icon');
-            let currentNavbar = document.querySelector('.navbar');
-            if (currentMenuIcon && currentNavbar && currentNavbar.classList.contains('active')) {
-                currentMenuIcon.classList.remove('fa-times');
-                currentNavbar.classList.remove('active');
-            }
-        };
-    } else {
-        console.error('Error');
     }
 }

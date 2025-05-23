@@ -1,19 +1,6 @@
 function renderProjectCards() {
     const contenedor = document.querySelector('.proyectos__contenedor');
-    if (!contenedor) {
-        console.error('Error del container');
-        return;
-    }
     contenedor.innerHTML = '';
-
-    if (typeof proyectosData === 'undefined') {
-        console.error('Error al obtener los datos de proyecto');
-        return;
-    }
-    if (typeof attachLikeBehavior === 'undefined' || typeof attachSaveBehavior === 'undefined') {
-        console.error('Error en la interaccion');
-        return;
-    }
 
     proyectosData.forEach(proyecto => {
         const card = document.createElement('div');
@@ -39,8 +26,8 @@ function renderProjectCards() {
             saveButton.innerHTML = `<i class="far fa-bookmark"></i>`;
         }
 
-        attachLikeBehavior(likeButton, likeCountSpan, proyecto);
-        attachSaveBehavior(saveButton, proyecto);
+        Ejecutar_like(likeButton, likeCountSpan, proyecto);
+        Ejecutar_save(saveButton, proyecto);
 
         actionsDiv.appendChild(likeButton);
         actionsDiv.appendChild(saveButton);

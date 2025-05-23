@@ -20,18 +20,13 @@
     text-decoration: none; 
 }
 
-.header__navbar-link {
-    margin-left: 20px; 
-    color: #ffffff;
+.header__navbar a {
     text-decoration: none;
-    font-size: 1.2em;
+    color: white;
 }
-
-.header__navbar-link:hover {
-    color: #000000;
-    text-decoration: underline dotted black;
+.header__navbar a:hover{
+    color:black;
 }
-
 .header__menu-icono {
     display: none;
     font-size: 2.5rem;

@@ -1,31 +1,48 @@
 document.addEventListener('DOMContentLoaded', () => {
-
-
-    if (typeof loadHTML !== 'function') {
-        console.error('No se cargo la funcion loadHTML');
-        return;
-    }
-
-    loadHTML('#header-placeholder', 'site/header.html', () => {
-        if (typeof initializeMenu === 'function') {
-            initializeMenu();
-        } else {
-            console.error('error del menu');
+    const cargarRecursosEstaticos = () => {
+        if (typeof loadHTML === 'function') {
+            loadHTML('#header-placeholder', 'site/header.html', () => {
+                if (typeof initializeMenu === 'function') {
+                    initializeMenu();
+                }
+            });
+            loadHTML('#footer-placeholder', 'site/footer.html');
         }
-    });
+    };
 
-    loadHTML('#inicio-placeholder', 'site/secciones/inicio.html');
+    cargarRecursosEstaticos();
 
-    loadHTML('#proyectos-placeholder', 'site/secciones/proyectos.html', () => {
-        if (typeof renderProjectCards === 'function') {
-            renderProjectCards();
-        } else {
-            console.error('error del render');
-        }
-    });
-
-    loadHTML('#sobremi-placeholder', 'site/secciones/sobremi.html');
-    loadHTML('#articulos-placeholder', 'site/secciones/articulos.html');
-    loadHTML('#contacto-placeholder', 'site/secciones/contacto.html');
-    loadHTML('#footer-placeholder', 'site/footer.html');
+    if (typeof inicializarEnrutador === 'function') {
+        inicializarEnrutador();
+    } 
 });
+
+function initializeMenu() {
+    let menuIcon = document.querySelector('#menu-icon');
+    let navbar = document.querySelector('.navbar');
+
+    menuIcon.onclick = () => {
+        menuIcon.classList.toggle('fa-times');
+        navbar.classList.toggle('active');
+    };
+
+    let navLinks = document.querySelectorAll('.navbar a');
+    navLinks.forEach(link => {
+        link.onclick = () => {
+            if (navbar.classList.contains('active') && link.getAttribute('href').startsWith('#')) {
+                menuIcon.classList.remove('fa-times');
+                navbar.classList.remove('active');
+            }
+        };
+    });
+
+    window.onscroll = () => {
+        let currentMenuIcon = document.querySelector('#menu-icon');
+        let currentNavbar = document.querySelector('.navbar');
+        if (currentNavbar.classList.contains('active')) {
+            currentMenuIcon.classList.remove('fa-times');
+            currentNavbar.classList.remove('active');
+        }
+    };
+}
+
