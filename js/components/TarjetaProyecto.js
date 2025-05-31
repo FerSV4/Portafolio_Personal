@@ -81,7 +81,8 @@ plantillaTarjetaProyecto.innerHTML = `
     z-index: 10;
 }
 
-.proyecto-card__action-button {
+
+.proyecto-card__action-button { /* Estilo general para botones de acción en la tarjeta */
     background-color: rgba(255, 255, 255, 0.9);
     border: 1px solid var(--main-color);
     color: var(--main-color);
@@ -115,9 +116,6 @@ plantillaTarjetaProyecto.innerHTML = `
     color: white;
 }
 
-.proyecto-card__action-button--save.active i.far.fa-bookmark {
-    color: var(--main-color); 
-}
 
     </style>
     <div class="proyecto-card">
@@ -126,9 +124,7 @@ plantillaTarjetaProyecto.innerHTML = `
                 <i class="fas fa-heart"></i>
                 <span class="proyecto-card__like-count">0</span>
             </button>
-            <button class="proyecto-card__action-button proyecto-card__action-button--save" aria-label="Guardar">
-                <i class="far fa-bookmark"></i>
-            </button>
+            <save-button></save-button> 
         </div>
         <img class="proyecto-card__imagen" src="" alt="Imagen del Proyecto">
         <div class="proyecto-card__info">
@@ -156,29 +152,28 @@ class TarjetaProyecto extends HTMLElement {
         
         this.botonMeGusta = this.raizSombra.querySelector('.proyecto-card__action-button--like');
         this.contadorMeGusta = this.raizSombra.querySelector('.proyecto-card__like-count');
-        this.botonGuardar = this.raizSombra.querySelector('.proyecto-card__action-button--save');
-        this.iconoGuardar = this.raizSombra.querySelector('.proyecto-card__action-button--save i');
+        this.saveButtonComponent = this.raizSombra.querySelector('save-button');
 
         this._datosProyecto = null;
     }
-
     static get observedAttributes() {
         return ['datos-proyecto-id']; 
     }
 
     attributeChangedCallback(nombreAtributo, valorAntiguo, valorNuevo) {
         if (nombreAtributo === 'datos-proyecto-id' && valorAntiguo !== valorNuevo) {
-
-            this._datosProyecto = proyectosData.find(p => p.titulo === valorNuevo); 
+            this._datosProyecto = proyectosData.find(p => p.titulo === valorNuevo); //
             if (this._datosProyecto) {
                 this.renderizar();
-                this.configurarEventos();
+                this.configurarEventos(); 
             }
         }
     }
 
     renderizar() {
-        if (!this._datosProyecto) return;
+        if (!this._datosProyecto) {
+            return;
+        }
 
         this.elementoImagen.src = this._datosProyecto.imagenSrc || 'assets/default.png';
         this.elementoImagen.alt = this._datosProyecto.imagenAlt || 'Imagen del Proyecto';
@@ -193,14 +188,8 @@ class TarjetaProyecto extends HTMLElement {
             this.botonMeGusta.classList.remove('active');
         }
 
-        if (this._datosProyecto.guardado) {
-            this.botonGuardar.classList.add('active');
-            this.iconoGuardar.classList.remove('far');
-            this.iconoGuardar.classList.add('fas');
-        } else {
-            this.botonGuardar.classList.remove('active');
-            this.iconoGuardar.classList.remove('fas');
-            this.iconoGuardar.classList.add('far');
+        if (this.saveButtonComponent) {
+            this.saveButtonComponent.setAttribute('project-id', this._datosProyecto.titulo);
         }
     }
 
@@ -208,38 +197,18 @@ class TarjetaProyecto extends HTMLElement {
         if (!this._datosProyecto) return;
 
         this.botonMeGusta.onclick = () => {
-
             const comando = new LikeCommand(this._datosProyecto, this.botonMeGusta, this.contadorMeGusta); //
-            comando.ejecutar(); //
-
+            comando.ejecutar(); 
             this._datosProyecto.liked = this.botonMeGusta.classList.contains('active');
-        };
-
-        this.botonGuardar.onclick = () => {
-            const comando = new SaveCommand(this._datosProyecto, this.botonGuardar); //
-            comando.ejecutar(); //
-            this._datosProyecto.guardado = this.botonGuardar.classList.contains('active');
-            if (this._datosProyecto.guardado) {
-                this.iconoGuardar.classList.remove('far');
-                this.iconoGuardar.classList.add('fas');
-            } else {
-                this.iconoGuardar.classList.remove('fas');
-                this.iconoGuardar.classList.add('far');
-            }
-
-            this.dispatchEvent(new CustomEvent('proyecto-guardado-cambiado', {
-                detail: { proyecto: this._datosProyecto, guardado: this._datosProyecto.guardado },
-                bubbles: true,
-                composed: true
-            }));
         };
     }
 
     connectedCallback() {
         if (this.hasAttribute('datos-proyecto-id')) {
-            this._datosProyecto = proyectosData.find(p => p.titulo === this.getAttribute('datos-proyecto-id'));
+            const proyectoId = this.getAttribute('datos-proyecto-id');
+            this._datosProyecto = proyectosData.find(p => p.titulo === proyectoId); //
             if (this._datosProyecto) {
-                this.renderizar();
+                this.renderizar(); 
                 this.configurarEventos();
             }
         }
