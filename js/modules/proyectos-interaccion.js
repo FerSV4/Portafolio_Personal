@@ -65,3 +65,12 @@ function Ejecutar_like(buttonElement, countElement, project) {
  * @param {HTMLElement} buttonComponentInstance 
  * @param {object} project 
  */
+
+class SearchCommand {
+    constructor(searchTerm) {
+        this.searchTerm = searchTerm;
+    }
+    ejecutar() {
+        SavedProjectsManager.getInstance().setSearchTermAndFilter(this.searchTerm, proyectosData); //
+    }
+}

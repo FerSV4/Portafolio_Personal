@@ -16,13 +16,13 @@ function inicializarEnrutador() {
         'articulos': { html: 'site/secciones/articulos.html'}, 
         'contacto': { html: 'site/secciones/contacto.html' }, 
         'guardados': { 
-            html: 'site/secciones/guardados.html',
-            callback: () => {
-                if (typeof setupGuardadosPageView === 'function') { 
-                    setupGuardadosPageView();
+                html: 'site/secciones/guardados.html',
+                callback: () => {
+                    if (typeof setupGuardadosPageView === 'function') { //
+                        setupGuardadosPageView();
+                    }
                 }
             }
-        }
     };
 
     function Carga_contenido() {
