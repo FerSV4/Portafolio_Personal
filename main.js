@@ -1,21 +1,21 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    SavedProjectsManager.getInstance().initializeProjectDataStatus(proyectosData); //
+    SavedProjectsManager.getInstance().initializeProjectDataStatus(proyectosData); 
 
     const cargarRecursosEstaticos = () => {
-        if (typeof loadHTML === 'function') { //
-            loadHTML('#header-placeholder', 'site/header.html', () => { //
-                if (typeof initializeMenu === 'function') { //
+        if (typeof loadHTML === 'function') { 
+            loadHTML('#header-placeholder', 'site/header.html', () => { 
+                if (typeof initializeMenu === 'function') { 
                     initializeMenu();
                 }
             });
-            loadHTML('#footer-placeholder', 'site/footer.html'); //
+            loadHTML('#footer-placeholder', 'site/footer.html'); 
         }
     };
 
     cargarRecursosEstaticos();
 
-    if (typeof inicializarEnrutador === 'function') { //
+    if (typeof inicializarEnrutador === 'function') { 
         inicializarEnrutador();
     }
 });

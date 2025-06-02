@@ -1,17 +1,3 @@
-/* Estilos SECCION PROYECTOS */
-.proyectos {
-    background: var(--snd-bg-color); 
-    padding-bottom: 5rem; 
-}
-
-.proyectos__contenedor {
-    display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
-    gap: 2rem; 
-    justify-content: center; 
-    align-items: start;
-}
-
 .proyecto-card {
     background: var(--bg-color); 
     border-radius: 0.8rem;

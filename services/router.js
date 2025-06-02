@@ -18,7 +18,7 @@ function inicializarEnrutador() {
         'guardados': { 
                 html: 'site/secciones/guardados.html',
                 callback: () => {
-                    if (typeof setupGuardadosPageView === 'function') { //
+                    if (typeof setupGuardadosPageView === 'function') { 
                         setupGuardadosPageView();
                     }
                 }
@@ -36,10 +36,10 @@ function inicializarEnrutador() {
         if (Ver_nombre_ruta === '') { Ver_nombre_ruta = '/'; }
 
         const rutaConfig = rutas[Ver_nombre_ruta] || rutas['/'];
-        if (rutaConfig && typeof loadHTML === 'function') { //
+        if (rutaConfig && typeof loadHTML === 'function') { 
             loadHTML('#main-content', rutaConfig.html, rutaConfig.callback);
         } else { 
-            if (rutas['/'] && typeof loadHTML === 'function') { //
+            if (rutas['/'] && typeof loadHTML === 'function') { 
                  loadHTML('#main-content', rutas['/'].html, rutas['/'].callback);
             }
             window.location.hash = '#/'; 

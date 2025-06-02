@@ -12,15 +12,21 @@
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/secciones/inicio.css">
-    <link rel="stylesheet" href="css/secciones/proyectos.css">
-    <link rel="stylesheet" href="css/secciones/sobremi.css">
-    <link rel="stylesheet" href="css/secciones/articulos.css">
-    <link rel="stylesheet" href="css/secciones/contacto.css">
-    <link rel="stylesheet" href="css/footer.css">
-    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="blocks/base.css">
+    <link rel="stylesheet" href="blocks/header.css">
+    <link rel="stylesheet" href="blocks/logo/header-logo.css">
+    <link rel="stylesheet" href="blocks/icon/header-icon.css">
+    <link rel="stylesheet" href="blocks/inicio.css">
+    <link rel="stylesheet" href="blocks/icon/inicio-icon.css">
+    <link rel="stylesheet" href="blocks/proyectos.css">
+    <link rel="stylesheet" href="blocks/card/proyectos-card.css">
+    <link rel="stylesheet" href="blocks/sobremi.css">
+    <link rel="stylesheet" href="blocks/articulos.css">
+    <link rel="stylesheet" href="blocks/contacto.css">
+    <link rel="stylesheet" href="blocks/form/contacto-formulario.css">
+    <link rel="stylesheet" href="blocks/footer.css">
+    <link rel="stylesheet" href="blocks/icon/footer-icon.css">
+    <link rel="stylesheet" href="blocks/responsive.css">
 
 </head>
 <body>
@@ -32,16 +38,16 @@
 
     <div id="footer-placeholder"></div>
 
-    <script src="js/data/proyectos-data.js"></script> 
-    <script src="js/modules/DOM.js"></script>
-    <script src="js/modules/SavedProjectsManager.js"></script> 
-    <script src="js/modules/menu.js"></script>
-    <script src="js/modules/proyectos-interaccion.js"></script> 
-    <script src="js/components/TarjetaProyecto.js"></script>
-    <script src="js/components/SaveButtonComponent.js"></script>
-    <script src="js/components/search-bar.js"></script>   
-    <script src="js/modules/render-proyectos.js"></script>    
-    <script src="js/router.js"></script> 
-    <script src="js/main.js"></script>
+    <script src="data/proyectos-data.js"></script> 
+    <script src="modules/DOM.js"></script>
+    <script src="modules/menu.js"></script>
+    <script src="modules/render-proyectos.js"></script>    
+    <script src="components/TarjetaProyecto.js"></script>
+    <script src="components/SaveButtonComponent.js"></script>
+    <script src="services/search-bar.js"></script>
+    <script src="services/singleton/Single-ProyectosManager.js"></script>
+    <script src="services/command/Command-LikeSaveProyectos.js"></script>
+    <script src="services/router.js"></script> 
+    <script src="main.js"></script>
 </body>
 </html>
