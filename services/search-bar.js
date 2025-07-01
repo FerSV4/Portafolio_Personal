@@ -62,14 +62,14 @@ class SearchBarComponent extends HTMLElement {
     }
 
     _handleInput(event) {
-        const searchTerm = event.target.value;
-        this._executeSearch(searchTerm);
+        const TerminoBusqueda = event.target.value;
+        this._executeSearch(TerminoBusqueda);
     }
 
     _handleKeydown(event) {
         if (event.key === 'Enter') {
-            const searchTerm = event.target.value;
-            this._executeSearch(searchTerm);
+            const TerminoBusqueda = event.target.value;
+            this._executeSearch(TerminoBusqueda);
         }
     }
 

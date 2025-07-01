@@ -1,33 +1,33 @@
 const SavedProjectsManager = (() => {
     let instance;
     const observers = [];
-    let savedProjectTitles = [];
+    let ProyectosGuardadosTitle = [];
 
     let _currentFilterTerm = '';
-    let _allCurrentlySavedProjectObjects = [];
-    let _displayableItems = [];
+    let _ActualesProyectosGuardados = [];
+    let ElementosMostrables = [];
 
-    function loadFromLocalStorage() {
-        const storedTitles = localStorage.getItem('savedProjectTitles');
-        if (storedTitles) {
-            savedProjectTitles = JSON.parse(storedTitles);
+    function CargarDesdeLocalStorage() {
+        const TitulosGuardados = localStorage.getItem('ProyectosGuardadosTitle');
+        if (TitulosGuardados) {
+            ProyectosGuardadosTitle = JSON.parse(TitulosGuardados);
         }
     }
 
     function saveToLocalStorage() {
-        localStorage.setItem('savedProjectTitles', JSON.stringify(savedProjectTitles));
+        localStorage.setItem('ProyectosGuardadosTitle', JSON.stringify(ProyectosGuardadosTitle));
     }
 
-    function _fetchAllSavedProjectObjectsFromData(projectDataArrayGlobal) {
+    function _MostrartodosLosProyectosGuardados(projectDataArrayGlobal) {
         if (!projectDataArrayGlobal) return [];
-        return projectDataArrayGlobal.filter(p => savedProjectTitles.includes(p.titulo));
+        return projectDataArrayGlobal.filter(p => ProyectosGuardadosTitle.includes(p.titulo));
     }
 
-    function _applyFilterToSavedProjectsList() {
+    function _aplicarFiltroListaProyectos() {
         if (!_currentFilterTerm) {
-            _displayableItems = [..._allCurrentlySavedProjectObjects];
+            ElementosMostrables = [..._ActualesProyectosGuardados];
         } else {
-            _displayableItems = _allCurrentlySavedProjectObjects.filter(project =>
+            ElementosMostrables = _ActualesProyectosGuardados.filter(project =>
                 (project.titulo && project.titulo.toLowerCase().includes(_currentFilterTerm))
             );
         }
@@ -42,64 +42,64 @@ const SavedProjectsManager = (() => {
     }
 
     function createInstance() {
-        loadFromLocalStorage();
+        CargarDesdeLocalStorage();
 
         return {
             initializeProjectDataStatus: (projectDataArrayGlobal) => {
                 if (!projectDataArrayGlobal) return;
                 projectDataArrayGlobal.forEach(p => {
                     if (typeof p.guardado === 'undefined') { p.guardado = false; }
-                    p.guardado = savedProjectTitles.includes(p.titulo);
+                    p.guardado = ProyectosGuardadosTitle.includes(p.titulo);
                 });
-                _allCurrentlySavedProjectObjects = _fetchAllSavedProjectObjectsFromData(projectDataArrayGlobal);
-                _applyFilterToSavedProjectsList();
+                _ActualesProyectosGuardados = _MostrartodosLosProyectosGuardados(projectDataArrayGlobal);
+                _aplicarFiltroListaProyectos();
             },
 
             toggleSaveState: (project) => {
                 if (!project || !project.titulo) return false;
-                const isNowSaved = project.guardado;
-                const currentlyInList = savedProjectTitles.includes(project.titulo);
+                const EstaGuardado = project.guardado;
+                const currentlyInList = ProyectosGuardadosTitle.includes(project.titulo);
 
-                if (isNowSaved) {
-                    if (!currentlyInList) savedProjectTitles.push(project.titulo);
+                if (EstaGuardado) {
+                    if (!currentlyInList) ProyectosGuardadosTitle.push(project.titulo);
                 } else {
                     if (currentlyInList) {
-                        const index = savedProjectTitles.indexOf(project.titulo);
-                        savedProjectTitles.splice(index, 1);
+                        const index = ProyectosGuardadosTitle.indexOf(project.titulo);
+                        ProyectosGuardadosTitle.splice(index, 1);
                     }
                 }
                 saveToLocalStorage();
-                _allCurrentlySavedProjectObjects = _fetchAllSavedProjectObjectsFromData(proyectosData);
-                _applyFilterToSavedProjectsList();
+                _ActualesProyectosGuardados = _MostrartodosLosProyectosGuardados(proyectosData);
+                _aplicarFiltroListaProyectos();
                 notifyObservers();
                 return true;
             },
             
-            setSearchTermAndFilter: function(searchTerm, projectDataArrayGlobal) {
-                _currentFilterTerm = (searchTerm || '').toLowerCase().trim();
+            SetTerminoyFiltro: function(TerminoBusqueda, projectDataArrayGlobal) {
+                _currentFilterTerm = (TerminoBusqueda || '').toLowerCase().trim();
                 if (projectDataArrayGlobal) {
-                    _allCurrentlySavedProjectObjects = _fetchAllSavedProjectObjectsFromData(projectDataArrayGlobal);
+                    _ActualesProyectosGuardados = _MostrartodosLosProyectosGuardados(projectDataArrayGlobal);
                 }
-                _applyFilterToSavedProjectsList();
+                _aplicarFiltroListaProyectos();
                 notifyObservers();
             },
 
-            getDisplayableItems: function() {
-                return _displayableItems;
+            obtenerElementosMostrables: function() {
+                return ElementosMostrables;
             },
             
-            refreshInitialDisplayableItems: function(projectDataArrayGlobal) {
-                this.setSearchTermAndFilter('', projectDataArrayGlobal);
+            refrescarelementosMostrableInic: function(projectDataArrayGlobal) {
+                this.SetTerminoyFiltro('', projectDataArrayGlobal);
             },
 
-            getTotalSavedCountDirect: function() { 
-                return savedProjectTitles.length;
+            _ContadorGuardadosDirect: function() { 
+                return ProyectosGuardadosTitle.length;
             },
             getCurrentFilterTerm: function() {
                 return _currentFilterTerm;
             },
 
-            isSaved: (projectTitle) => savedProjectTitles.includes(projectTitle),
+            isSaved: (projectTitle) => ProyectosGuardadosTitle.includes(projectTitle),
 
             subscribe: (observer) => {
                 if (observer && typeof observer.update === 'function' && !observers.includes(observer)) {

@@ -29,8 +29,8 @@ const SavedProjectsViewObserver = {
         contenedorGuardados.innerHTML = '';
 
         const spManager = SavedProjectsManager.getInstance();
-        const itemsToDisplay = spManager.getDisplayableItems();
-        const totalSaved = spManager.getTotalSavedCountDirect();
+        const itemsMostrables = spManager.obtenerElementosMostrables();
+        const totalSaved = spManager._ContadorGuardadosDirect();
         const filterTerm = spManager.getCurrentFilterTerm();
 
         if (totalSaved === 0) {
@@ -38,7 +38,7 @@ const SavedProjectsViewObserver = {
             return;
         }
         
-        itemsToDisplay.forEach(item => {
+        itemsMostrables.forEach(item => {
             const tarjeta = document.createElement('tarjeta-proyecto');
             tarjeta.setAttribute('datos-proyecto-id', item.titulo);
             contenedorGuardados.appendChild(tarjeta);
@@ -48,7 +48,7 @@ const SavedProjectsViewObserver = {
     initializeView: function() {
         const spManager = SavedProjectsManager.getInstance();
         spManager.subscribe(this);
-        spManager.refreshInitialDisplayableItems(proyectosData);
+        spManager.refrescarelementosMostrableInic(proyectosData);
     }
 };
 

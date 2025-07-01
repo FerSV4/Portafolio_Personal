@@ -36,7 +36,7 @@ class LikeCommand extends Comando {
 }
 
 class SaveCommand extends Comando {
-    constructor(proyecto, EL_boton_contexto) { 
+    constructor(proyecto) { 
         super(proyecto);
 
         this.Prj_guardado_anterior = proyecto.guardado; 
@@ -67,10 +67,10 @@ function Ejecutar_like(buttonElement, countElement, project) {
  */
 
 class SearchCommand {
-    constructor(searchTerm) {
-        this.searchTerm = searchTerm;
+    constructor(TerminoBusqueda) {
+        this.TerminoBusqueda = TerminoBusqueda;
     }
     ejecutar() {
-        SavedProjectsManager.getInstance().setSearchTermAndFilter(this.searchTerm, proyectosData); //
+        SavedProjectsManager.getInstance().SetTerminoyFiltro(this.TerminoBusqueda, proyectosData); //
     }
 }
