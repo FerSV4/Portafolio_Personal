@@ -152,7 +152,7 @@ class TarjetaProyecto extends HTMLElement {
         
         this.botonMeGusta = this.raizSombra.querySelector('.proyecto-card__action-button--like');
         this.contadorMeGusta = this.raizSombra.querySelector('.proyecto-card__like-count');
-        this.saveButtonComponent = this.raizSombra.querySelector('save-button');
+        // this.saveButtonComponent = this.raizSombra.querySelector('save-button');
 
         this._datosProyecto = null;
     }
@@ -187,10 +187,10 @@ class TarjetaProyecto extends HTMLElement {
         } else {
             this.botonMeGusta.classList.remove('active');
         }
-
+/*
         if (this.saveButtonComponent) {
             this.saveButtonComponent.setAttribute('project-id', this._datosProyecto.titulo);
-        }
+        } */
     }
 
     configurarEventos() {

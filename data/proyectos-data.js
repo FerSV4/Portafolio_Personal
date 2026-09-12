@@ -1,18 +1,18 @@
 const proyectosData = [
     {
-        imagenSrc: "assets/proyecto1.png",
-        imagenAlt: "Proyecto 1",
-        titulo: "Sistema Solar",
-        descripcion: "Proyecto de sistema solar. <br> Realizado con JavaScript, Three.Js y modelos 3D",
-        github: "https://github.com/FerSV4/SolarSystem",
+        imagenSrc: "assets/proyecto4.png",
+        imagenAlt: "Proyecto 4",
+        titulo: "Qitchen Restaurant",
+        descripcion: "Plataforma web de restaurante. <br> Realizado con Vanilla JS, HTML y CSS. <br> Restful API con Node.js y Express.",
+        github: "https://github.com/FerSV4/APP-REST-SUSHI",
         likes: 9,
     },
     {
-        imagenSrc: "assets/proyecto2.png",
-        imagenAlt: "Proyecto 2",
-        titulo: "Sistema de seguridad - IA",
-        descripcion: "Sistema de reconocimiento en tiempo real. <br> Realizado con Python, Tensorflow y OpenCV",
-        github: "https://github.com/FerSV4/Sistema-de-seguridad-Inteligencia-Artificial",
+        imagenSrc: "assets/proyecto5.png",
+        imagenAlt: "Proyecto 5",
+        titulo: "StudyTrack",
+        descripcion: "Aplicacion web de gestión académica. <br> Realizado con Angular, Typescript y NestJS.",
+        github: "https://github.com/FerSV4/StudyTrack-WEB",
         likes: 8,
     },
     {

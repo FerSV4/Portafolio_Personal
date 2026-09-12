@@ -34,7 +34,7 @@ const SavedProjectsViewObserver = {
         const filterTerm = spManager.getCurrentFilterTerm();
 
         if (totalSaved === 0) {
-            contenedorGuardados.innerHTML = '<p style="text-align:center; font-size: 1.2rem; color: var(--text-color); padding: 2rem;">No tienes proyectos guardados :(</p>';
+            contenedorGuardados.innerHTML = '<p style="text-align:center; font-size: 1.2rem; color: var(--text-color); padding: 2rem;">No hay proyectos</p>';
             return;
         }
         
