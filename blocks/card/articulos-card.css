@@ -1,0 +1,66 @@
+.articulo-card {
+    background: var(--bg-color);
+    border-radius: 1rem;
+    box-shadow: 0 0.2rem 0.8rem rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    width: clamp(300px, 45%, 500px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.articulo-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 0.4rem 1.2rem rgba(0, 0, 0, 0.2);
+}
+
+.articulo-card__imagen {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.articulo-card__info {
+    padding: 1.5rem;
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.articulo-card__titulo {
+    font-size: 1.6rem;
+    color: var(--main-color);
+    margin-bottom: 1rem;
+}
+
+.articulo-card__fecha {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-bottom: 0.75rem;
+}
+
+.articulo-card__descripcion {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.articulo-card__boton {
+    display: block;
+    width: fit-content;
+    margin: 0 auto 1.5rem auto;
+    padding: 0.8rem 2rem;
+    background-color: var(--main-color);
+    color: #ffffff;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+}
+
+.articulo-card__boton:hover {
+    background-color: #365853;
+}

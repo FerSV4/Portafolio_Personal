@@ -1,0 +1,22 @@
+
+.contacto__input-grupo {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.contacto__input,
+.contacto__textarea {
+    width: 100%;
+    padding: 1.2rem;
+    font-size: 1.28rem; 
+    color: var(--text-color);
+    background: var(--bg-color);
+    border-radius: 0.8rem;
+    border: 0.25rem solid var(--main-color);
+    margin: 0.7rem 0;
+    resize: none;
+}
+.contacto__input-grupo .contacto__input {
+    width: 48%;
+}
